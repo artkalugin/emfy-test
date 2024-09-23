@@ -7,6 +7,10 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      padding: '1.25rem',
+      center: true
+    },
     extend: {
       colors: {
         background: "var(--background)",
