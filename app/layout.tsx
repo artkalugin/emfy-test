@@ -26,9 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-cyan-500 to-blue-500`}
       >
-        {children}
+        <header className="py-10">
+          <h1 className="text-3xl font-bold text-white text-center">Тестовое задание Emfy</h1>
+        </header>
+          {children}
+        <footer className="py-20">
+          <p className="text-center text-semibold opacity-60 text-white">&#169; Artemy Kalugin, { new Date().getFullYear() }</p>
+        </footer>
       </body>
     </html>
   );

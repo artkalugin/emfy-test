@@ -1,3 +1,5 @@
+import Card from "./components/card";
+
 const { ACCESS_TOKEN } = process.env
 
 const fetchData = async () => {
@@ -13,26 +15,13 @@ export default async function Home() {
   return (
       <main>
         <div className="container">
-          <table>
-            <thead>
-              <tr>
-                <th>Название сделки</th>
-                <th>Бюджет</th>
-                <th>ID</th>
-              </tr>
-            </thead>
-            <tbody>
+          <div className="grid gap-4">
               {
                 data?._embedded?.leads?.map(lead => (
-                  <tr key={ lead.id }>
-                    <td>{ lead.name }</td>
-                    <td>{ lead.price }</td>
-                    <td>{ lead.id }</td>
-                  </tr>
+                  <Card key={ lead.id } name={ lead.name } id={ lead.id }  price={ lead.price } />
                 ))
               }
-            </tbody>
-          </table>
+          </div>
         </div>
       </main>
   );
